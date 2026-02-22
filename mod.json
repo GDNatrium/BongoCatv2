@@ -1,0 +1,30 @@
+{
+	"geode": "5.0.0-beta.2",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "natrium.bongo_cat",
+	"name": "Bongo Cat",
+	"version": "v2.0.0",
+	"developer": "Natrium",
+	"description": "Bongo Cat in GD",
+	"resources": {
+		"spritesheets": {
+			"CatSheet": [ "resources/cats/*.png" ],
+			"HatSheet": [ "resources/hats/*.png" ],
+			"DecoSheet": [ "resources/decos/*.png" ]
+		}
+	},
+	"dependencies": {
+		"geode.node-ids": ">=v1.20.0"
+	},
+	"tags": [ "enhancement", "interface", "offline", "joke" ],
+	"settings": {
+		"open-menu": {
+			"type": "custom:open-menu"
+		}
+	}
+}
