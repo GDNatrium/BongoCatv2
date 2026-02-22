@@ -104,6 +104,9 @@ ScrollLayer* BongoCatSettings::createScrollLayer() {
     m_scaleInput = createTextInput(scaleText.c_str(), [this](const std::string& text) {
         auto scale = numFromString<float>(text).unwrapOr(0.01);
         if (scale < 0.01) scale = 0.01;
+        if (scale > 5.f) scale = 5.f;
+
+        m_scaleSlider->setValue((scale - 0.25) / 4.75);
 
         m_cat->setScale(scale);
     });
@@ -130,6 +133,8 @@ ScrollLayer* BongoCatSettings::createScrollLayer() {
         if (posX < 0.0) posX = 0.0;
         if (posX > 100) posX = 100;
 
+        m_posXSlider->setValue(posX / 100);
+
         auto actualPos = posX * winSize.width / 100;
         m_cat->setPositionX(actualPos);
     });
@@ -154,6 +159,8 @@ ScrollLayer* BongoCatSettings::createScrollLayer() {
         auto posY = numFromString<float>(text).unwrapOr(0.0);
         if (posY < 0.0) posY = 0.0;
         if (posY > 100) posY = 100;
+
+        m_posYSlider->setValue(posY / 100);
 
         auto actualPos = posY * winSize.height / 100;
         m_cat->setPositionY(actualPos);

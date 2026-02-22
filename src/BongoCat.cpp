@@ -91,14 +91,22 @@ void BongoCat::show() {
 	this->addChild(m_catSpr);
 
 	auto hat = Mod::get()->getSavedValue<int>("hat", 1);
-	m_hatSpr = CCSprite::createWithSpriteFrameName(fmt::format("hat{}.png"_spr, hat).c_str());
+	m_hatSpr = CCSprite::createWithSpriteFrameName(fmt::format("hat{}.png"_spr, hat - 1).c_str());
 	m_hatSpr->setFlipX(flipX);
 	this->addChild(m_hatSpr);
 
+	if (hat == 1) {
+		m_hatSpr->setVisible(false);
+	}
+
 	auto deco = Mod::get()->getSavedValue<int>("deco", 1);
-	m_decoSpr = CCSprite::createWithSpriteFrameName(fmt::format("deco{}.png"_spr, deco).c_str());
+	m_decoSpr = CCSprite::createWithSpriteFrameName(fmt::format("deco{}.png"_spr, deco - 1).c_str());
 	m_decoSpr->setFlipX(flipX);
 	this->addChild(m_decoSpr);
+
+	if (deco == 1) {
+		m_decoSpr->setVisible(false);
+	}
 }
 
 void BongoCat::onSettings(CCObject* sender) {

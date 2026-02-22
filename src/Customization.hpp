@@ -17,7 +17,7 @@ namespace Customization {
 	};
 
 	inline std::vector<Customs> HATS {
-		{ "None", "none.png"_spr },
+		{ "None", "hat0.png"_spr },
 		{ "Party Hat", "hat1.png"_spr },
 		{ "Beanie", "hat2.png"_spr },
 		{ "Chef Hat", "hat3.png"_spr },
@@ -40,7 +40,7 @@ namespace Customization {
 	};
 
 	inline std::vector<Customs> DECOS {
-		{ "None", "none.png"_spr },
+		{ "None", "deco0.png"_spr },
 		{ "Bowtie", "deco1.png"_spr },
 		{ "CAT", "deco2.png"_spr },
 		{ "Moustache", "deco3.png"_spr },
