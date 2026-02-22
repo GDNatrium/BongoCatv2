@@ -16,20 +16,20 @@ public:
 class ExtraBongoSettingNode : public SettingValueNode<BongoSettings> {
 protected:
 	bool init(std::shared_ptr<BongoSettings>& setting, float width) {
-		if (!SettingValueNodeV3::init(setting, width))
-			return false;
+		if (!SettingValueNodeV3::init(setting, width)) return false;
 
 		this->setContentSize({ width, 40.f });
 
-		auto* sprite = ButtonSprite::create("Open Settings", 0, false, "bigFont.fnt", "GJ_button_04.png", 24.5f, 0.4f);
-		auto* btn = CCMenuItemSpriteExtra::create(sprite, this, menu_selector(ExtraBongoSettingNode::onOpen));
-		auto* menu = CCMenu::create();
+		auto sprite = ButtonSprite::create("Open Settings", 0, false, "bigFont.fnt", "GJ_button_04.png", 24.5f, 0.4f);
+		auto btn = CCMenuItemSpriteExtra::create(sprite, this, menu_selector(ExtraBongoSettingNode::onOpen));
+		auto menu = CCMenu::create();
 		menu->setPosition({ width / 2, 20.f });
 		menu->addChild(btn);
 		this->addChild(menu);
 
 		return true;
 	}
+
 	void onOpen(CCObject*) {
 		BongoCatSettings::create()->show();
 	}
