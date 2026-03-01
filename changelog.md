@@ -1,3 +1,7 @@
+## 2.0.1
+- <cy>Upated</c> keyboard input during levels to bongo again.
+- <cr>Fixed</c> crash when launching the game with unhandled sprite IDs saved.
+
 # 2.0.0
 - <cg>Added</c> Geode v5 Support.
 - <cg>Added</c> a lot of new items.

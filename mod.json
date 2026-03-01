@@ -1,5 +1,5 @@
 {
-	"geode": "5.0.0-beta.2",
+	"geode": "5.0.0",
 	"gd": {
 		"win": "2.2081",
 		"android": "2.2081",
@@ -8,7 +8,7 @@
 	},
 	"id": "natrium.bongo_cat",
 	"name": "Bongo Cat",
-	"version": "v2.0.0",
+	"version": "v2.0.1",
 	"developer": "Natrium",
 	"description": "Bongo Cat in GD",
 	"resources": {

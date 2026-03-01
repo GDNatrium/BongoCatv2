@@ -87,11 +87,21 @@ void BongoCat::show() {
 
 	auto cat = Mod::get()->getSavedValue<int>("cat", 1);
 	m_catSpr = CCSprite::createWithSpriteFrameName(fmt::format("cat{}_1.png"_spr, cat).c_str());
+	if (!m_catSpr) {
+		cat = 1;
+		Mod::get()->setSavedValue("cat", 1);
+		m_catSpr = CCSprite::createWithSpriteFrameName(fmt::format("cat1_1.png"_spr, cat).c_str());
+	}
 	m_catSpr->setFlipX(flipX);
 	this->addChild(m_catSpr);
 
 	auto hat = Mod::get()->getSavedValue<int>("hat", 1);
 	m_hatSpr = CCSprite::createWithSpriteFrameName(fmt::format("hat{}.png"_spr, hat - 1).c_str());
+	if (!m_hatSpr) {
+		hat = 1;
+		Mod::get()->setSavedValue("hat", 1);
+		m_hatSpr = CCSprite::createWithSpriteFrameName(fmt::format("hat1.png"_spr, hat - 1).c_str());
+	}
 	m_hatSpr->setFlipX(flipX);
 	this->addChild(m_hatSpr);
 
@@ -101,6 +111,11 @@ void BongoCat::show() {
 
 	auto deco = Mod::get()->getSavedValue<int>("deco", 1);
 	m_decoSpr = CCSprite::createWithSpriteFrameName(fmt::format("deco{}.png"_spr, deco - 1).c_str());
+	if (!m_decoSpr) {
+		deco = 1;
+		Mod::get()->setSavedValue("deco", 1);
+		m_decoSpr = CCSprite::createWithSpriteFrameName(fmt::format("deco1.png"_spr, deco - 1).c_str());
+	}
 	m_decoSpr->setFlipX(flipX);
 	this->addChild(m_decoSpr);
 

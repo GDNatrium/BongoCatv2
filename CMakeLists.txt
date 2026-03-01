@@ -12,7 +12,7 @@ project(BongoCatv2 VERSION 1.0.0)
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
 
-add_library(${PROJECT_NAME} SHARED ${SOURCES} "src/BongoCat.cpp" "src/CustomizeMenu.cpp"  "src/hooks/CCTouchDispatcher.cpp" "src/BongoCatSettings.cpp" "src/hooks/PlayLayer.cpp" "src/hooks/PauseLayer.cpp" )
+add_library(${PROJECT_NAME} SHARED ${SOURCES} "src/BongoCat.cpp" "src/CustomizeMenu.cpp"  "src/hooks/CCTouchDispatcher.cpp" "src/BongoCatSettings.cpp" "src/hooks/PlayLayer.cpp" "src/hooks/PauseLayer.cpp"  "src/hooks/GJBaseGameLayer.cpp")
 
 if (NOT DEFINED ENV{GEODE_SDK})
     message(FATAL_ERROR "Unable to find Geode SDK! Please define GEODE_SDK environment variable to point to Geode")
